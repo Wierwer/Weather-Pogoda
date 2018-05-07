@@ -3,11 +3,11 @@
 session_start();
 
 require_once "connection.php";
-$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+$connection = @new mysqli($host, $db_user, $db_password, $db_name);
 
-if($polaczenie->connect_errno!=0)
+if($connection->connect_errno!=0)
 {
-    echo "Error".$polaczenie->connect_errno;
+    echo "Error".$connection->connect_errno;
 }
 else
 {
@@ -125,12 +125,12 @@ else
     $sql1 = "SELECT city FROM city ORDER BY id DESC LIMIT 1 ;";
     $sql2 = "SELECT city FROM city ORDER BY id DESC LIMIT 5 ;";
     
-    if($rezultat = @$polaczenie->query($sql))
+    if($result = @$connection->query($sql))
     {
-           if($rezultat1 = @$polaczenie->query($sql1))
+           if($result1 = @$connection->query($sql1))
            {
-               $aport = $rezultat1->fetch_assoc();
-               $_SESSION['miasto'] = $aport['city'];
+               $apport = $result1->fetch_assoc();
+               $_SESSION['city1'] = $apport['city'];
                
            }
          
@@ -139,10 +139,10 @@ else
     }
     else
     {
-        echo "cos poszlo nie tak";
+        echo "Ups..Sorry something went wrong";
     }
 
 
-    $polaczenie->close();
+    $connection->close();
 }
 ?>
