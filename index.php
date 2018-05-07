@@ -13,7 +13,7 @@ session_start();
 <body>
 
 
- <H1>Pogoda:</H1>
+ <H1>Pogodas:</H1>
     <form action="pobieranieinf.php" method="post">
  Podaj miejscowość: <input type="text" name="city" required/>
  <input type="submit" value="Pokaż pogodę" />
