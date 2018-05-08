@@ -134,7 +134,7 @@ else
                
            }
          
-           header('Location: koniec.php');
+           header('Location: output.php');
         
     }
     else

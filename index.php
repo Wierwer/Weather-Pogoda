@@ -14,7 +14,7 @@ session_start();
 
 
  <H1>Weather:</H1>
-    <form action="pobieranieinf.php" method="post">
+    <form action="down_inf.php" method="post">
  City: <input type="text" name="city" required/>
  <input type="submit" value="Show weather" />
  <br /><br />
